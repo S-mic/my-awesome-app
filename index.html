@@ -1,46 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+  <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <title>My weather application</title>
+<link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <title>Weather App</title>
   </head>
   <body>
-    <div class="weather-app">
+     <div class="weather-app">
       <header>
-        <form id="search-form">
+        <form class="search-form">
           <input
             type="search"
-            placeholder="Enter a city.."
+            placeholder="Enter a city"
             required
-            class="search-input"
-            id="search-input"
+            class="search-form-input"
+            id="search-form-input"
           />
-          <input type="submit" value="Search" class="search-button" />
+          <input type="submit" value="Search" class="search-form-button" />
         </form>
       </header>
       <main>
-        <div class="current-weather">
-          <div>
-            <h1 class="current-city" id="current-city">Paris</h1>
-            <p class="current-details">
-              <span id="current-date"></span>, moderate rain <br />
-              Humidity: <strong>87%</strong>, Wind: <strong>7.2km/h</strong>
-            </p>
+        <div class="weather-data">
+          <div class="current-weather">
+            <h1 class="current-city" id="current-city"></h1>
+
+            <p class="current-day" id="current-day"></p>
+            <p class="current-date" id="current-date">5 Aug 2024</p>
+            <p class="current-time" id="current-time"></p>
+            <div class="current-weather-description">
+              <div class="big-weather-icon" id="current-weather-icon"></div>
+
+              <p class="current-description" id="current-description"></p>
+            </div>
+            <div class="current-temperature">
+              <div><h2 id="current-temperature"></h2></div>
+              <div>
+                <p id="current-temperature-units">
+                  <span id="imperial-unit">°F</span> /
+                  <span id="metric-unit">°C</span>
+                </p>
+              </div>
+            </div>
+            <div class="current-temperature-range">
+              <div class="current-temp-high"><p>H: 28°</p></div>
+              <div class="current-temp-low"><p>L: 23°</p></div>
+            </div>
+            <div class="current-conditions-section">
+              <div class="current-wind">
+                <div>
+                  <img
+                    src="img/wind_icon.png"
+                    alt="wind icon"
+                    class="current-conditions"
+                  />
+                </div>
+                <div>
+                  <p id="wind-speed"><span id="wind-speed-unit"></span></p>
+                </div>
+              </div>
+              <div class="current-humidity">
+                <div>
+                  <img
+                    src="img/humidity_icon.png"
+                    alt="humidity icon"
+                    class="current-conditions"
+                  />
+                </div>
+                <div><p id="humidity"></p></div>
+              </div>
+            </div>
           </div>
-          <div class="current-temperature">
-            <span class="current-temperature-icon">☀️</span
-            ><span class="current-temperature-value" id="current-temperature"
-              >24</span
-            ><span class="current-temperature-unit">°C</span>
+          <div>
+            <div class="forecast-data">
+              <div>
+                <img
+                  src="img/partly_cloudy_icon.png"
+                  alt="partly cloudy icon"
+                  class="big-weather-icon"
+                />
+              </div>
+              <div class="tomorrow">
+                <div id="tomorrow">Tomorrow</div>
+                <div>19° / 17°</div>
+                <div>Partly Cloudy</div>
+              </div>
+            </div>
+            <div class="forecast-data">
+              <div>Tues</div>
+              <div>⛅</div>
+              <div>Partly Cloudy</div>
+              <div>19° / 16°</div>
+            </div>
+            <div class="forecast-data">
+              <div>Wed</div>
+              <div>⛅</div>
+              <div>Partly Cloudy</div>
+              <div>19° / 16°</div>
+            </div>
+            <div class="forecast-data">
+              <div>Thurs</div>
+              <div>⛅</div>
+              <div>Partly Cloudy</div>
+              <div>19° / 16°</div>
+            </div>
+            <div class="forecast-data">
+              <div>Fri</div>
+              <div>⛅</div>
+              <div>Partly Cloudy</div>
+              <div>19° / 16°</div>
+            </div>
+            <div class="forecast-data">
+              <div>Sat</div>
+              <div>⛅</div>
+              <div>Partly Cloudy</div>
+              <div>19° / 16°</div>
+            </div>
+            <div class="forecast-data">
+              <div>Sun</div>
+              <div>⛅</div>
+              <div>Partly Cloudy</div>
+              <div>19° / 16°</div>
+            </div>
           </div>
         </div>
       </main>
